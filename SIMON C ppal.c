@@ -1,7 +1,7 @@
 #include <htc.h>;		//librería para eeprom_read(adress), eeprom_write(address, data);
 #include "delay.c";		//librería de retardos de Hi Tech
 
-#define _XTAL_FREQ 8000000;
+#define _XTAL_FREQ 8000000;	//Clock freq.
 
 __CONFIG(INTIO & UNPROTECT & CCPRB0 & DEBUGDIS & LVPDIS & BORDIS & MCLRDIS & PWRTDIS & WDTDIS & UNPROTECT);
 __CONFIG(FCMDIS & IESODIS);
@@ -27,10 +27,10 @@ unsigned int X;
 unsigned char mataRBIF;
 
 void main (void){
+	Inicializacion();
 	unsigned char posibilidades[30], data, compruebaWHILEsalidas, compruebaWHILEentradas;
 	unsigned int metePosib = 0;
 	int aleatoriador;
-	Inicializacion();
 	mataRBIF = PORTB;
 	RBIF = 0;
 	aleatoriador = 0;
@@ -163,11 +163,7 @@ void Inicializacion(void){			//Configuración del sistema:
 	TRISA = 0x00;					//PORTA como Output
 	OPTION = RBPU;					//RBPU por 0x00Resistencias de Pull-up de PORTB activadas
 	TRISB = 0xFF;					//PORTB como Input
-	INTCON = 0x00;			//Deshabilito interrupciones globales y de periféricos y las de PORTB<7:4> y pongo los flags a 0
-	for(X=50; X<80; X++){				//|
-		eeprom_write(X, 0x00);			//|-> Relleno la EEPROM con las combinaciones del juego
-		DelayMs(20);
-	}			
+	INTCON = 0x00;			//Deshabilito interrupciones globales y de periféricos y las de PORTB<7:4> y pongo los flags a 0		
 	mataRBIF = PORTB;
 	RBIF = 0;
 }
