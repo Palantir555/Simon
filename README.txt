@@ -1,8 +1,10 @@
-El codigo de "SIMON C ppal.c" fue escrito en pocos dias y con prisa, por lo que es probable que haya partes poco optimizadas o caoticas. 
+This is a clone of the memory game "Simon". It was developed a long time ago for a college assignment and in a short 
+period of time, so don't expect any complex features or clean/optimized code.
 
-Ademas, la carga de las secuencias sobre la EEPROM es innecesaria, y solo fue incluida por motivos academicos. Como se puede ver claramente, las secuencias ya estan guardadas en la memoria del programa.
+Loading the sequences on the EEPROM is not necessary. Its only purpose was to cover one of the assignment requirements. 
+These sequences are not random either, and the only random factor is choosing which sequence to play.
 
-Por falta de tiempo debida a examenes y demas quehaceres no pude implementar un codigo en que las secuencias fuesen realmente aleatorias. Esto, y guardar el record de aciertos en la EEPROM (con una musiquita si lo superas :P) fueron las 2 funcionalidades principales que lamento no haber podido implementar. Puesto que es poco probable que vaya a hacerlo, si alguien modifica el codigo e implementa estas u otras funcionalidades extra, me encantaria ver los resultados :)
+For any requests or doubts you can contact me: jcjc.dev@gmail.com
 
-Un saludo,
-Juan Carlos Jiménez Caballero
+Best,
+Juan Carlos Jimenez
